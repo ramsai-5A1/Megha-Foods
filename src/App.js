@@ -1,9 +1,11 @@
+import { RouterProvider } from "react-router-dom"
 import "./App.css"
+import appRouter from "./helper/routes"
 
 const App = () => {
   return (
-    <div className="bg-blue-300">
-      Hello world
+    <div className="bg-gray-200 w-full h-screen">
+      <RouterProvider router={appRouter}/>
     </div>
   )
 }

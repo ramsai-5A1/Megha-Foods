@@ -1,2 +1,2 @@
 
-export const COMPANY_LOGO = "https://i.imgur.com/SwWrPVd.png";
+export const COMPANY_LOGO = "https://i.imgur.com/mN1Dblb.png";

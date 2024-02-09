@@ -20,3 +20,19 @@ export const ABOUTPART_TEXTS = [
     "Super Strong & Leak Proof Packing Delivery Using Bluedart & DHL",
     "All Together With Delicious Products & Fast Delivery We Make & Keep Customers Happy"
 ]
+
+export const CATEGORIES = [
+    "NON VEGETARIAN PICKLES",
+    "VEGETARIAN PICKLES",
+    "TELANGANA DELIGHTS",
+    "WITH OUT GARLIC",
+    "POWDERS & MASALAS",
+    "SWEET & HOT",
+    "FOR DIABETIC",
+    "AUTHENTIC HYDERABAD PRODUCTS",
+    "ORGANICS & MILLETS",
+    "FESTIVAL SPECIAL KITS",
+    "COMBO OFFERS",
+    "GIFT CARDS",
+    "ALL OTHERS"
+]

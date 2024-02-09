@@ -1,18 +1,32 @@
-import {COMPANY_LOGO} from "../helper/constants"
+import {CATEGORIES, COMPANY_LOGO} from "../helper/constants"
 import { CgProfile } from "react-icons/cg";
 import { FaHeart } from "react-icons/fa";
 import { BsCartDashFill } from "react-icons/bs";
 import { FaIndianRupeeSign } from "react-icons/fa6";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { FaAngleDown, FaAngleUp } from "react-icons/fa";
+
 
 
 const Header = () => {
 
+    const [isOpened, setIsOpened] = useState(false);
     const [field, setField] = useState(1);
+
 
     const handleOnClick = (id) => {
         setField(id);
+    }
+
+    const handleOnMouseEnter = () => {
+        setField(2);
+        setIsOpened(true);
+    }
+
+    const handleOnMouseLeave = () => {
+        setField(-1);
+        setIsOpened(false);
     }
 
     return (
@@ -50,8 +64,17 @@ const Header = () => {
                         <Link to="/">HOME</Link>
                     </li>
 
-                    <li className={`hover:cursor-pointer hover:bg-blue-950 hover:text-white p-2 m-2 ${field == 2 ? 'bg-blue-950 text-white' : 'bg-white'}`} onClick={() => handleOnClick(2)}>
-                        <Link to="/product-category">SHOP BY CATEGORY</Link>
+                    <li onMouseEnter={handleOnMouseEnter} onMouseLeave={handleOnMouseLeave} className="" onClick={() => handleOnClick(2)}>
+                        <div className={`hover:cursor-pointer hover:bg-blue-950 hover:text-white p-2 m-2 ${field == 2 ? 'bg-blue-950 text-white' : 'bg-white'}`}>
+                            <Link className="flex space-x-3 items-center" to="/product-category">
+                                <span className="">SHOP BY CATEGORY </span>
+                                {isOpened ? <FaAngleUp/> : <FaAngleDown/>}
+                            </Link>
+                        </div>
+                        <div className="pl-2">
+                            {isOpened && <DropDownMenu/>}
+                        </div>
+                        
                     </li>
 
                     <li className={`hover:cursor-pointer hover:bg-blue-950 hover:text-white p-2 m-2 ${field == 3 ? 'bg-blue-950 text-white' : 'bg-white'}`} onClick={() => handleOnClick(3)}>
@@ -80,6 +103,26 @@ const Header = () => {
 
                 </ul>
             </div>
+        </div>
+    )
+}
+
+const DropDownMenu = () => {
+    return (
+        <div className="">
+            <div className="bg-white text-black absolute w-52">
+                <ul className="flex flex-col">
+                    {CATEGORIES.map((category, index) => <li key={index}><CardRow text={category}/></li>)}
+                </ul>
+            </div>
+        </div>
+    )
+}
+
+const CardRow = ({text}) => {
+    return (
+        <div className="border-t border-b p-2 hover:cursor-pointer hover:bg-blue-950 hover:text-white w-full">
+            <span>{text}</span>
         </div>
     )
 }

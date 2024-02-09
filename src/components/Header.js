@@ -4,6 +4,7 @@ import { FaHeart } from "react-icons/fa";
 import { BsCartDashFill } from "react-icons/bs";
 import { FaIndianRupeeSign } from "react-icons/fa6";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 
 const Header = () => {
@@ -45,14 +46,38 @@ const Header = () => {
 
             <div >
                 <ul className="flex space-x-4 p-2 justify-center font-bold">
-                    <li className={`hover:cursor-pointer hover:bg-blue-950 hover:text-white p-2 m-2 ${field == 1 ? 'bg-blue-950 text-white' : 'bg-white'}`} onClick={() => handleOnClick(1)}>HOME</li>
-                    <li className={`hover:cursor-pointer hover:bg-blue-950 hover:text-white p-2 m-2 ${field == 2 ? 'bg-blue-950 text-white' : 'bg-white'}`} onClick={() => handleOnClick(2)}>SHOP BY CATEGORY</li>
-                    <li className={`hover:cursor-pointer hover:bg-blue-950 hover:text-white p-2 m-2 ${field == 3 ? 'bg-blue-950 text-white' : 'bg-white'}`} onClick={() => handleOnClick(3)}>ABOUT US</li>
-                    <li className={`hover:cursor-pointer hover:bg-blue-950 hover:text-white p-2 m-2 ${field == 4 ? 'bg-blue-950 text-white' : 'bg-white'}`} onClick={() => handleOnClick(4)}>EVENT/BULK ORDERS</li>
-                    <li className={`hover:cursor-pointer hover:bg-blue-950 hover:text-white p-2 m-2 ${field == 5 ? 'bg-blue-950 text-white' : 'bg-white'}`} onClick={() => handleOnClick(5)}>GIFTING</li>
-                    <li className={`hover:cursor-pointer hover:bg-blue-950 hover:text-white p-2 m-2 ${field == 6 ? 'bg-blue-950 text-white' : 'bg-white'}`} onClick={() => handleOnClick(6)}>SUGGEST</li>
-                    <li className={`hover:cursor-pointer hover:bg-blue-950 hover:text-white p-2 m-2 ${field == 7 ? 'bg-blue-950 text-white' : 'bg-white'}`} onClick={() => handleOnClick(7)}>TESTIMONIALS</li>
-                    <li className={`hover:cursor-pointer hover:bg-blue-950 hover:text-white p-2 m-2 ${field == 8 ? 'bg-blue-950 text-white' : 'bg-white'}`} onClick={() => handleOnClick(8)}>CONTACT US</li>
+                    <li className={`hover:cursor-pointer hover:bg-blue-950 hover:text-white p-2 m-2 ${field == 1 ? 'bg-blue-950 text-white' : 'bg-white'}`} onClick={() => handleOnClick(1)}>
+                        <Link to="/">HOME</Link>
+                    </li>
+
+                    <li className={`hover:cursor-pointer hover:bg-blue-950 hover:text-white p-2 m-2 ${field == 2 ? 'bg-blue-950 text-white' : 'bg-white'}`} onClick={() => handleOnClick(2)}>
+                        <Link to="/product-category">SHOP BY CATEGORY</Link>
+                    </li>
+
+                    <li className={`hover:cursor-pointer hover:bg-blue-950 hover:text-white p-2 m-2 ${field == 3 ? 'bg-blue-950 text-white' : 'bg-white'}`} onClick={() => handleOnClick(3)}>
+                        <Link to="/about-us">ABOUT US</Link>
+                    </li>
+
+                    <li className={`hover:cursor-pointer hover:bg-blue-950 hover:text-white p-2 m-2 ${field == 4 ? 'bg-blue-950 text-white' : 'bg-white'}`} onClick={() => handleOnClick(4)}>
+                        <Link to="/event-bulk-orders">EVENT/BULK ORDERS</Link>
+                    </li>
+
+                    <li className={`hover:cursor-pointer hover:bg-blue-950 hover:text-white p-2 m-2 ${field == 5 ? 'bg-blue-950 text-white' : 'bg-white'}`} onClick={() => handleOnClick(5)}>
+                        <Link to="/gifting">GIFTING</Link>
+                    </li>
+
+                    <li className={`hover:cursor-pointer hover:bg-blue-950 hover:text-white p-2 m-2 ${field == 6 ? 'bg-blue-950 text-white' : 'bg-white'}`} onClick={() => handleOnClick(6)}>
+                        <Link to="/suggest">SUGGEST</Link>
+                    </li>
+
+                    <li className={`hover:cursor-pointer hover:bg-blue-950 hover:text-white p-2 m-2 ${field == 7 ? 'bg-blue-950 text-white' : 'bg-white'}`} onClick={() => handleOnClick(7)}>
+                        <Link to="/testimonials">TESTIMONIALS</Link>
+                    </li>
+
+                    <li className={`hover:cursor-pointer hover:bg-blue-950 hover:text-white p-2 m-2 ${field == 8 ? 'bg-blue-950 text-white' : 'bg-white'}`} onClick={() => handleOnClick(8)}>
+                        <Link to="/contact-us">CONTACT US</Link>
+                    </li>
+
                 </ul>
             </div>
         </div>

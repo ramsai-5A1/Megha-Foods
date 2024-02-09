@@ -1,2 +1,2 @@
 
-export default LOGO = "https://i.imgur.com/PaoTyDO.png";
+export const COMPANY_LOGO = "https://i.imgur.com/SwWrPVd.png";

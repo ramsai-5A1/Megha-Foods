@@ -65,7 +65,7 @@ const Header = () => {
                     </li>
 
                     <li onMouseEnter={handleOnMouseEnter} onMouseLeave={handleOnMouseLeave} className="" onClick={() => handleOnClick(2)}>
-                        <div className={`hover:cursor-pointer hover:bg-blue-950 hover:text-white p-2 m-2 ${field == 2 ? 'bg-blue-950 text-white' : 'bg-white'}`}>
+                        <div className={`hover:cursor-pointer hover:bg-blue-950 hover:text-white p-2 mt-2 ml-2 mr-2 ${field == 2 ? 'bg-blue-950 text-white' : 'bg-white'}`}>
                             <Link className="flex space-x-3 items-center" to="/product-category">
                                 <span className="">SHOP BY CATEGORY </span>
                                 {isOpened ? <FaAngleUp/> : <FaAngleDown/>}
@@ -121,7 +121,7 @@ const DropDownMenu = () => {
 
 const CardRow = ({text}) => {
     return (
-        <div className="border-t border-b p-2 hover:cursor-pointer hover:bg-blue-950 hover:text-white w-full">
+        <div className="bg-gray-200 border-t border-b p-2 hover:cursor-pointer hover:bg-blue-950 hover:text-white w-full">
             <span>{text}</span>
         </div>
     )

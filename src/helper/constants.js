@@ -36,3 +36,11 @@ export const CATEGORIES = [
     "GIFT CARDS",
     "ALL OTHERS"
 ]
+
+export const YOUTUBE_URL_PREFIX = "https://www.youtube.com/embed/";
+export const HAPPY_CUSTOMERS_YOUTUBE_IDS = [
+    "rxYuQUcI7dU",
+    "lzgt3eyfS_w",
+    "f2vhsBqBqlA",
+    "dBSpdEH9Law"
+]

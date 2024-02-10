@@ -1,9 +1,12 @@
 import { ABOUTPART_IMAGES, ABOUTPART_TEXTS, COMPANY_LOGO_2, EMPOWERMENT_IMAGE, FARMERS_FRIEND_IMAGE, HAPPY_CUSTOMERS_IMAGE, QUALITY_SERVICE_IMAGE } from "../helper/constants"
+import HappyCustomers from "./HappyCustomers"
 
 const Body = () => {
     return (
         <div>
             <AboutPart/>
+            <HappyCustomers/>
+            {/* <AboutPart/> */}
         </div>
     )
 }

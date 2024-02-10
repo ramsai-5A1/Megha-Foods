@@ -3,11 +3,16 @@ import { MdCurrencyRupee } from "react-icons/md";
 import { BsCartDashFill } from "react-icons/bs";
 import Slider from "react-slick";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
+import TOP_PRODUCT_DATA from "../helper/topProductsMock.json"
 
 
 const TopProducts = () => {
     const receipeSlide = useRef(null);
+
+    useEffect(() => {
+        // need to do an api call to fetch all receipes information
+    }, []);
 
     const settings = {
         dots: true,
@@ -23,31 +28,21 @@ const TopProducts = () => {
 
 
     return (
-        <div>
+        <div className="bg-black text-white">
+            <div className="flex justify-center p-2">
+                <span className="font-bold text-lg">Top Products</span>
+            </div>
             <Slider ref={receipeSlide} {...settings}>
-                <TopProductCard/>
-                <TopProductCard/>
-                <TopProductCard/>
-                <TopProductCard/>
-                <TopProductCard/>
-                <TopProductCard/>
+                {TOP_PRODUCT_DATA.TOP_RECEIPIES.map((value) => <TopProductCard key={value.id} data={value}/>)}
             </Slider>
-
-            {/* <TopProductCard/>
-            <TopProductCard/>
-            <TopProductCard/>
-            <TopProductCard/>
-            <TopProductCard/>
-            <TopProductCard/> */}
-            
         </div>
     )
 }
 
-const TopProductCard = () => {
+const TopProductCard = ({data}) => {
     return (
-        <div className="flex flex-col items-center w-80 border border-black shadow-lg p-2 m-2 rounded-lg">
-            <img className="w-80 h-80" alt="receipe-pic" src="https://sitarafoods.com/wp-content/uploads/2022/07/01-2.jpg"/>
+        <div className="bg-white hover:cursor-pointer text-black flex flex-col items-center w-80 border border-black shadow-lg p-4 m-4 rounded-lg">
+            <img className="w-80 h-80" alt="receipe-pic" src={data.imageUrl}/>
             <div className="flex space-x-3 p-2 m-2 items-center">
                 <div className="flex space-x-1">
                     <IoStarSharp/>
@@ -56,20 +51,20 @@ const TopProductCard = () => {
                     <IoStarSharp/>
                     <IoStarSharp/>
                 </div>
-                <span>(4 reviews)</span>
+                <span>({data.reviews} reviews)</span>
             </div>
 
             <div className="flex flex-col items-center">
-                <span className="text-lg font-bold">Hyderabad Dum-biryani</span>
+                <span className="text-lg font-bold">{data.title}</span>
                 <span className="text-sm font-semibold">Made Fresh Every Day</span>
             </div>
 
             <div className="text-red-700 flex flex-col items-center">
                 <span className="flex items-center ">
                     <MdCurrencyRupee/>
-                    270.00 -
+                    {data.min_price}.00 -
                     <MdCurrencyRupee/>
-                    300.00
+                    {data.max_price}.00
                 </span>
                 <span>(Inclusive of tax & Free shipping in India)</span>
             </div>
